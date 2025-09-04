@@ -84,7 +84,7 @@ export default function Frame() {
 
   return (
     <div style={{ padding: '20px' }}>
-      <h1>Frame Page ({publicRuntimeConfig.DOMAIN_DATALAYER})</h1>
+      <h1>Frame Page ({window.location.hostname})</h1>
       <div style={{ marginBottom: '20px' }}>
         <button onClick={pingParent} style={{ marginRight: '10px' }}>
           Ping Parent

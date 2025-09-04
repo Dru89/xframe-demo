@@ -81,7 +81,7 @@ export default function Popup() {
 
   return (
     <div style={{ padding: '20px' }}>
-      <h1>Popup Page ({publicRuntimeConfig.DOMAIN_POPUP})</h1>
+      <h1>Popup Page ({window.location.hostname})</h1>
       <div style={{ marginBottom: '20px' }}>
         <button onClick={pingParent} style={{ marginRight: '10px' }}>
           Ping Parent
