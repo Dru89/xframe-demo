@@ -59,7 +59,7 @@ export default function Home() {
       const data = JSON.parse(localStorage.getItem('clientData') || 'null');
       iframeRef.current.contentWindow.postMessage(
         { type: 'ping', data },
-        `http://${publicRuntimeConfig.DOMAIN_DATALAYER}`
+        publicRuntimeConfig.DOMAIN_DATALAYER
       );
       addMessage(
         `Sent ping${
@@ -74,7 +74,7 @@ export default function Home() {
       const data = JSON.parse(localStorage.getItem('clientData') || 'null');
       popup.postMessage(
         { type: 'ping', data },
-        `http://${publicRuntimeConfig.DOMAIN_POPUP}`
+        publicRuntimeConfig.DOMAIN_POPUP
       );
       addMessage(
         'Sent ping' +
@@ -110,7 +110,7 @@ export default function Home() {
 
   const showPopup = () => {
     const newPopup = window.open(
-      `http://${publicRuntimeConfig.DOMAIN_POPUP}/popup`,
+      `${publicRuntimeConfig.DOMAIN_POPUP}/popup`,
       'popup',
       'width=400,height=300'
     );
@@ -154,7 +154,7 @@ export default function Home() {
       <iframe
         title="frame"
         ref={iframeRef}
-        src={`http://${publicRuntimeConfig.DOMAIN_DATALAYER}/frame`}
+        src={`${publicRuntimeConfig.DOMAIN_DATALAYER}/frame`}
         width="600"
         height="400"
         style={{ border: '1px solid #ccc', marginBottom: '20px' }}

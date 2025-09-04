@@ -28,7 +28,7 @@ export default function Popup() {
         );
         window.opener?.postMessage(
           { type: 'pong', data: localData },
-          `http://${publicRuntimeConfig.DOMAIN_CLIENT}`
+          publicRuntimeConfig.DOMAIN_CLIENT
         );
       } else if (event.data.type === 'pong') {
         const data = event.data.data;
@@ -49,7 +49,7 @@ export default function Popup() {
     const data = JSON.parse(localStorage.getItem('popupData') || 'null');
     window.opener?.postMessage(
       { type: 'ping', data },
-      `http://${publicRuntimeConfig.DOMAIN_CLIENT}`
+      publicRuntimeConfig.DOMAIN_CLIENT
     );
     const dataText = data ? ` with data: ${JSON.stringify(data)}` : '';
     addMessage(`Sent ping${dataText} to parent`);

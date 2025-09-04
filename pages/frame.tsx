@@ -28,7 +28,7 @@ export default function Frame() {
         );
         window.parent.postMessage(
           { type: 'pong', data: localData },
-          `http://${publicRuntimeConfig.DOMAIN_CLIENT}`
+          publicRuntimeConfig.DOMAIN_CLIENT
         );
       } else if (event.data.type === 'pong') {
         const data = event.data.data;
@@ -49,7 +49,7 @@ export default function Frame() {
     const data = JSON.parse(localStorage.getItem('frameData') || 'null');
     window.parent.postMessage(
       { type: 'ping', data },
-      `http://${publicRuntimeConfig.DOMAIN_CLIENT}`
+      publicRuntimeConfig.DOMAIN_CLIENT
     );
     addMessage(
       'Sent ping' +

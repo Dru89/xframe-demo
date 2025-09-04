@@ -11,9 +11,9 @@ npm install
 
 2. Set environment variables (optional):
 ```bash
-export DOMAIN_CLIENT=localhost:3000
-export DOMAIN_DATALAYER=localhost:3001  
-export DOMAIN_POPUP=localhost:3002
+export DOMAIN_CLIENT="http://localhost:3000"
+export DOMAIN_DATALAYER="http://localhost:3001"
+export DOMAIN_POPUP="http://localhost:3002"
 ```
 
 3. Run the development servers:

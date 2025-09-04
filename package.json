@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"npm run dev:client\" \"npm run dev:frame\" \"npm run dev:popup\"",
-    "dev:client": "DOMAIN_CLIENT=localhost:3000 DOMAIN_DATALAYER=localhost:3001 DOMAIN_POPUP=localhost:3002 NEXT_BUILD_DIR=.next-client next dev -p 3000",
-    "dev:frame": "DOMAIN_CLIENT=localhost:3000 DOMAIN_DATALAYER=localhost:3001 DOMAIN_POPUP=localhost:3002 NEXT_BUILD_DIR=.next-frame next dev -p 3001",
-    "dev:popup": "DOMAIN_CLIENT=localhost:3000 DOMAIN_DATALAYER=localhost:3001 DOMAIN_POPUP=localhost:3002 NEXT_BUILD_DIR=.next-popup next dev -p 3002",
+    "dev:client": "DOMAIN_CLIENT=\"http://localhost:3000\" DOMAIN_DATALAYER=\"http://localhost:3001\" DOMAIN_POPUP=\"http://localhost:3002\" NEXT_BUILD_DIR=.next-client next dev -p 3000",
+    "dev:frame": "DOMAIN_CLIENT=\"http://localhost:3000\" DOMAIN_DATALAYER=\"http://localhost:3001\" DOMAIN_POPUP=\"http://localhost:3002\" NEXT_BUILD_DIR=.next-frame next dev -p 3001",
+    "dev:popup": "DOMAIN_CLIENT=\"http://localhost:3000\" DOMAIN_DATALAYER=\"http://localhost:3001\" DOMAIN_POPUP=\"http://localhost:3002\" NEXT_BUILD_DIR=.next-popup next dev -p 3002",
     "build": "next build",
     "start": "next start"
   },
