@@ -120,7 +120,7 @@ export default function Home() {
 
   return (
     <div style={{ padding: '20px' }}>
-      <h1>Index Page</h1>
+      <h1>Index Page ({publicRuntimeConfig.DOMAIN_CLIENT})</h1>
       <div style={{ marginBottom: '20px' }}>
         <button onClick={pingIframe} style={{ marginRight: '10px' }}>
           Ping Iframe
