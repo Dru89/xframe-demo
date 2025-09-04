@@ -155,9 +155,14 @@ export default function Home() {
         title="frame"
         ref={iframeRef}
         src={`${publicRuntimeConfig.DOMAIN_DATALAYER}/frame`}
-        width="600"
-        height="400"
-        style={{ border: '1px solid #ccc', marginBottom: '20px' }}
+        style={{
+          border: '1px solid #ccc',
+          marginBottom: '20px',
+          boxSizing: 'border-box',
+          width: '100%',
+          height: '500px',
+          marginTop: '20px'
+        }}
       />
     </div>
   );
