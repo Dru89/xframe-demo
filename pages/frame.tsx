@@ -5,6 +5,7 @@ const { publicRuntimeConfig } = getConfig();
 
 export default function Frame() {
   const [messages, setMessages] = useState<string[]>([]);
+  const [hostname, setHostname] = useState('');
 
   const addMessage = (msg: string) => {
     setMessages((prev) => [
@@ -12,6 +13,10 @@ export default function Frame() {
       `${new Date().toLocaleTimeString()}: ${msg}`
     ]);
   };
+
+  useEffect(() => {
+    setHostname(window.location.hostname);
+  }, []);
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
@@ -84,7 +89,7 @@ export default function Frame() {
 
   return (
     <div style={{ padding: '20px' }}>
-      <h1>Frame Page ({window.location.hostname})</h1>
+      <h1>Frame Page ({hostname})</h1>
       <div style={{ marginBottom: '20px' }}>
         <button onClick={pingParent} style={{ marginRight: '10px' }}>
           Ping Parent

@@ -6,6 +6,7 @@ const { publicRuntimeConfig } = getConfig();
 export default function Home() {
   const [messages, setMessages] = useState<string[]>([]);
   const [popup, setPopup] = useState<Window | null>(null);
+  const [hostname, setHostname] = useState('');
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   const addMessage = (msg: string) => {
@@ -14,6 +15,10 @@ export default function Home() {
       `${new Date().toLocaleTimeString()}: ${msg}`
     ]);
   };
+
+  useEffect(() => {
+    setHostname(window.location.hostname);
+  }, []);
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
@@ -120,7 +125,7 @@ export default function Home() {
 
   return (
     <div style={{ padding: '20px' }}>
-      <h1>Index Page ({window.location.hostname})</h1>
+      <h1>Index Page ({hostname})</h1>
       <div style={{ marginBottom: '20px' }}>
         <button onClick={pingIframe} style={{ marginRight: '10px' }}>
           Ping Iframe
